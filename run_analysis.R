@@ -1,18 +1,21 @@
+#load library
+library(dplyr)
+
 #read test data
-x_test <- read.table("Katina's Files/X_test.txt")
-y_test <- read.table("Katrina's Files/y_test.txt")
-sub_test <- read.table("Katrina's Files/subject_test.txt")
+x_test <- read.table("./X_test.txt")
+y_test <- read.table("./y_test.txt")
+sub_test <- read.table("./subject_test.txt")
 
 #read train data
-x_train <- read.table("Katrina's Files/X_train.txt")
-y_train <- read.table("Katrina's Files/y_train.txt")
-sub_train <- read.table("Katrina's Files/subject_train.txt")
+x_train <- read.table("./X_train.txt")
+y_train <- read.table("./y_train.txt")
+sub_train <- read.table("./subject_train.txt")
 
 #read variable labels
-variable_labels <- read.table("Katrina's Files/features.txt")
+variable_labels <- read.table("./features.txt")
 
 #read activity labels
-activity_labels <- read.table("Katrina's Files/activity_labels.txt")
+activity_labels <- read.table("./activity_labels.txt")
 
 #bind test and train sets together
 x <- rbind(x_test, x_train)
@@ -49,6 +52,6 @@ sortGroup <- group_by(sorted, activityNum, subject)
 meanGroup <- sortGroup %>% summarise(across(2:67, mean))
 
 #print out table
-write.table(meanGroup, file = file("Katrina's Files/tidyDataSet.txt", "wb"), row.names = FALSE)
+write.table(meanGroup, file = file("./tidyDataSet.txt", "wb"), row.names = FALSE)
 
 
