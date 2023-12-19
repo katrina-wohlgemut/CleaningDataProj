@@ -1,5 +1,5 @@
 # CleaningDataProj
-Final assignment for Getting and Cleaning Data course.
+Final assignment for Getting and Cleaning Data course (from John Hopkins on Coursera).
 # Data
 The X file contains data on 30 subjects from sensor signals from a smartphone. The Y file contains data on the activities that the 30 subjects were performing.
 # Tidy Data Set
